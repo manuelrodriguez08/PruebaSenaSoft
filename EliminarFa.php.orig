@@ -10,7 +10,11 @@ $des= $_GET['codigo'];
 
 
 
+<<<<<<< HEAD
+if($mostrar = mysql_query( "DELETE FROM fases WHERE  faseID= $desa")){
+=======
 if($mostrar = mysql_query( "DELETE FROM fases WHERE  faseID='$desa'")){
+>>>>>>> 9eb8d4cf5343f13fc44c0ca3f3a930f57ed6c02d
     
     echo "Si Borro";
     
