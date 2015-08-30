@@ -1,3 +1,13 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <a href='CerrarSesion.php?usuario=""&contrasena=""' > Cerrar Sesion</a>
+    </body>
+</html>
+
+
 <?php
 
 $conexion = mysql_connect("localhost","rodriguez","rodriguez");
@@ -60,7 +70,7 @@ echo " <center> <h1> USUARIOS</h1> </center>";
                     <td> Objetivo</td>
                     <td> Fecha Inicio</td>
                     <td> Duracion</td>
-                    <td> Jefe De proyecto</td>
+                    <td> ID Del Jefe De proyecto</td>
                     
                     
                 </tr>";

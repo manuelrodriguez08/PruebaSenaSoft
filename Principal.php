@@ -10,14 +10,50 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-            
+             <a href='CerrarSesion.php?usuario=""&contrasena=""' > Cerrar Sesion</a>
         <?php
-        echo " <center> <h1> REGISTRAR NUEVO USUARIO</h1> </center>"; 
+        $conexion = mysql_connect("localhost","rodriguez","rodriguez");
+
+mysql_select_db("ejercicio",$conexion);
+
+$mostrar = mysql_query( "SELECT * FROM proyectos");
+          
+         echo " <h1> PROCESOS GENERALES </h1> ";
+         
+         echo " <h2> Bienvenido Estos Son Los Principales Datos de la Empresa  </h2> ";
+       
+         echo " <center> <h1> PROYECTOS</h1> </center>"; 
             
          echo "  <table border=1px width=70%>
                 <tr> 
-                    <td> Usuario</td>
-                    <td> Contrasena</td>
+                    
+                    <td> Titulo</td>
+                    <td> Descripcion</td>
+                    <td> Objetivo</td>
+                    <td> Fecha Inicio</td>
+                    <td> Duracion</td>
+                    <td> ID Del Jefe De proyecto</td>
+                    
+                    
+                </tr>";
+         
+         while($fila = mysql_fetch_array($mostrar)){
+              echo "<tr><td>". $fila['titulo']. "</td><td>".$fila['descripcion']."</td><td>". $fila['objetivo']."</td><td>".
+                    $fila['fechaInicio']."</td><td>".$fila['duracion']."</td><td>".$fila['jefeProyecto'];
+        
+            
+         }
+         echo "</table>";
+         
+         $mostrar = mysql_query( "SELECT * FROM usuarios");
+
+
+
+echo " <center> <h1> USUARIOS</h1> </center>"; 
+            
+         echo "  <table border=1px width=70%>
+                <tr> 
+                    
                     <td> Nombre</td>
                     <td> Apellido</td>
                     <td> Fecha Nacimiento</td>
@@ -25,95 +61,37 @@ and open the template in the editor.
                     <td> Direccion</td>
                     <td> Telefono</td>
                     <td> Tipo de Usuario</td>
-                    <td> </td>
-                </tr>";
-            
-            
-             
-              echo "  <tr>
-                                             
-                   <form action='Principal.php' method='POST'>
-                                        <td> <input type='text' name='usuario'></td>
-                                        <td> <input type='password' name='contrasena '></td>
-                                        <td> <input type='text' name='nombre'></td>
-                                        <td> <input type='text' name='apellido'></td>
-                                        <td> <input type='text' name='fechan'></td>
-                                        <td> <input type='text' name='email'></td>
-                                         <td> <input type='text' name='direccion'></td>
-                                         <td> <input type='text' name='telefono'></td>
-                                         <td> <select  name='tipo'> 
-                                                                        <option value='jefe' >Jefe</option>
-                                                                <option value='analista' >Analista</option>
-                                                                                <option value='desarrollador' >Desarrolador</option>
-                                                                         <option value='tester' >Tester</option>
-                                                         </select>
-                                             </td>
-                                             <td> <input type='submit' ></td> 
-                             
-                </tr></form>";
-            
-            echo "</table>";
-            
-            
-            //IMPORTANTE OTRA TABLA REGISTRAR PROYECTOS
-            
-             echo " <center> <h1> REGISTRAR NUEVO PROYECTO</h1> </center>"; 
-            
-         echo "  <table border=1px width=70%>
-                <tr> 
-                     <td> Titulo</td>
-                    <td> Descripcion</td>
-                    <td> Objetivo</td>
-                    <td> Fecha Inicio</td>
-                    <td> Duracion</td>
-                    <td> Jefe De proyecto</td>
-                    <td></td>
-                </tr>";
-            
-            
-             
-              echo "  <tr>
-                                             
-                   <form action='Principal.php' method='POST'>
-                                        
-                                        <td> <input type='text' name='titulo'></td>
-                                        <td> <input type='text' name='descripcion'></td>
-                                        <td> <input type='text' name='objetivo'></td>
-                                        <td> <input type='text' name='fecha'></td>
-                                         <td> <input type='text' name='duracion'></td>
-                                         <td> <input type='text' name='jefe'></td>
-                                        <td> <input type='submit' ></td> 
-                             
-                </tr></form>";
-            
-            echo "</table>";
-            
-            //IMPORTANTE TABLA FASES
-            
-            echo " <center> <h1> REGISTRAR NUEVO FASE</h1> </center>"; 
-            
-         echo "  <table border=1px width=70%>
-                <tr> 
-                     <td> Nombre</td>
-                    <td> Codigo</td>
                     
-                    <td></td>
                 </tr>";
+         
+         while($fila = mysql_fetch_array($mostrar)){
+              echo "<tr><td>". $fila['nombre']. "</td><td>".$fila['apellido']."</td><td>". $fila['fechaNacimiento']."</td><td>".
+                    $fila['email']."</td><td>".$fila['direccion']."</td><td>".$fila['telefono']."</td><td>".$fila['tipoUsuario']."</td>";
+        
             
+         }
+         echo "</table>";
+         
+         $mos = mysql_query( "SELECT * FROM usuarios WHERE tipoUsuario='jefe'");
+
+echo " <center> <h1> JEFES </h1> </center>"; 
             
-             
-              echo "  <tr>
-                                             
-                   <form action='InsertarFase.php' method='POST'>
-                                        
-                                        <td> <input type='text' name='nombre'></td>
-                                        <td> <input type='text' name='codigo'></td>
-                                        
-                                         <td> <input type='submit' ></td> 
-                             
-                </tr></form>";
+         echo " <center> <table border=1px width=30%>
+                <tr> 
+                    <td> ID Jefe</td>
+                    <td> Nombre</td>
+                    <td> Apellido </td>
+                   
+                    
+                    
+                </tr>
+         </center>";
+         
+         while($fila = mysql_fetch_array($mos)){
+              echo "<tr><td>".$fila['usuarioID']."</td><td>".$fila['nombre']."</td><td>".$fila['apellido']."</td></tr>";
+        
             
-            echo "</table>";
+         }
         ?>
     </body>
 </html>

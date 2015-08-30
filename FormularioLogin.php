@@ -26,7 +26,7 @@ and open the template in the editor.
             <input type ="submit" value="Iniciar Sesión" style="color: black">
            <br>
             <br>
-            
+            <a href="principal.php">PROCESOS GENERALES </a>
               </fieldset> </center>
         </form>
         <?php
