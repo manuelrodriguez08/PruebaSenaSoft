@@ -35,7 +35,7 @@ $mostrar = mysql_query( 'SELECT * FROM usuarios where tipoUsuario ="jefe"');
 
 while($fila = mysql_fetch_array($mostrar)){
     
-    echo '<option value="'.$fila['nombre'].'" >'.$fila['nombre'].'</option>';
+    echo '<option value="'.$fila['usuarioID'].'" >'.$fila['nombre'].'</option>';
 }
 echo '</select></td>';
               

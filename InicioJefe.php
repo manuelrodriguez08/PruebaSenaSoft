@@ -1,8 +1,20 @@
 <?php
+
+session_start();
 $conexion = mysql_connect("localhost","rodriguez","rodriguez");
+ $x = $_SESSION['usuario'];
+ $y = $_SESSION['contrasena'];
 
 mysql_select_db("ejercicio",$conexion);
- $mostrar = mysql_query( "SELECT * FROM proyectos");
+ $mostrar = mysql_query( 'SELECT * FROM proyectos 
+
+inner join usuarios
+on proyectos.jefeProyecto = usuarios.usuarioID
+
+where usuario ="'.$x.'" and contrasena="'.$y.'";');
+ 
+ 
+ 
         echo "  <h1> JEFE</h1>"; 
          echo " <center> <h1> PROYECTOS</h1> </center>"; 
             
@@ -20,11 +32,14 @@ mysql_select_db("ejercicio",$conexion);
                 </tr>";
          
          while($fila = mysql_fetch_array($mostrar)){
+             echo $fila['jefeProyecto'];
               echo "<tr><td>". $fila['titulo']. "</td><td>".$fila['descripcion']."</td><td>". $fila['objetivo']."</td><td>".
-                    $fila['fechaInicio']."</td><td>".$fila['duracion']."</td><td>".$fila['jefeProyecto'];
+                    $fila['fechaInicio']."</td><td>".$fila['duracion']."</td><td>".$fila['nombre'];
         
             
          }
+         
+         
          echo "</table>";
 
 ?>
