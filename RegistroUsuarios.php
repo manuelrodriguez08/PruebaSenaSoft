@@ -27,7 +27,7 @@
                                         <td> <input type='date' name='fechan'></td>
                                         <td> <input type='text' name='email'></td>
                                          <td> <input type='text' name='direccion'></td>
-                                         <td> <input type='number' name='telefono'></td>
+                                         <td> <input type='text' name='telefono'></td>
                                          <td> <select  name='tipo'> 
                                                                         <option value='jefe' >Jefe</option>
                                                                 <option value='analista' >Analista</option>

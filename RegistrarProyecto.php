@@ -22,9 +22,25 @@
                                         <td> <input type='text' name='descripcion'></td>
                                         <td> <input type='text' name='objetivo'></td>
                                         <td> <input type='date' name='fecha'></td>
-                                         <td> <input type='text' name='duracion'></td>
-                                         <td> <a href='Jefes.php'>ASIGNAR JEFE</a></td>
-                                        <td> <input type='submit' ></td> 
+                                         <td> <input type='text' name='duracion'></td>";
+                                        
+              
+              
+              echo '<td> <select id="jefes" name="jefes">';
+             $conexion = mysql_connect("localhost","rodriguez","rodriguez");
+
+mysql_select_db("ejercicio",$conexion);
+
+$mostrar = mysql_query( 'SELECT * FROM usuarios where tipoUsuario ="jefe"');
+
+while($fila = mysql_fetch_array($mostrar)){
+    
+    echo '<option value="'.$fila['nombre'].'" >'.$fila['nombre'].'</option>';
+}
+echo '</select></td>';
+              
+              
+              echo"<td> <input type='submit' ></td> 
                              
                 </tr></form>";
               

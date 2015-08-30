@@ -8,14 +8,14 @@ $des= $_POST['descripcion'];
 $obj = $_POST['objetivo'];
 $fec= $_POST['fecha'];
 $dur = $_POST['duracion'];
-$jef = $_POST['jefe'];
+$jef = $_POST['jefes'];
 
 
 
 
 mysql_select_db("ejercicio",$conexion);
 
-$sql = "INSERT INTO proyectos(titulo,descripcion,objetivo,fechaInicio,telefono,jefeProyecto) VALUES('$titu','$des','$obj','$fec','$dur','$jef')";
+$sql = "INSERT INTO proyectos(titulo,descripcion,objetivo,fechaInicio,duracion,jefeProyecto) VALUES('$titu','$des','$obj','$fec','$dur','$jef')";
 
 if(mysql_query($sql)){
     echo "Se cargaron los datos a la tabla";
