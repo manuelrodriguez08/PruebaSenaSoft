@@ -3,14 +3,14 @@ $conexion = mysql_connect("localhost","rodriguez","rodriguez");
 
 mysql_select_db("ejercicio",$conexion);
 
-
+$desa = $_GET['faseID'];
 $titu = $_GET['nombre'];
 $des= $_GET['codigo'];
 
 
 
 
-if($mostrar = mysql_query( "DELETE FROM fases WHERE nombre='$titu' AND codigo='$des'")){
+if($mostrar = mysql_query( "DELETE FROM fases WHERE  faseID='$desa'")){
     
     echo "Si Borro";
     

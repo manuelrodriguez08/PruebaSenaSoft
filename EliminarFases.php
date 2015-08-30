@@ -18,7 +18,7 @@ echo " <center> <h1> FASES </h1> </center>";
                 </tr>";
          
          while($fila = mysql_fetch_array($mos)){
-              echo "<tr><td>". $fila['nombre']. "</td><td>".$fila['codigo']."</td><td><a href='EliminarFa.php?nombre=".$fila['nombre']."&codigo=".$fila['codigo']."'>Eliminar</a></td></tr>";
+              echo "<tr><td>". $fila['nombre']. "</td><td>".$fila['codigo']."</td><td><a href='EliminarFa.php?faseID=".fila['faseID']."&nombre=".$fila['nombre']."&codigo=".$fila['codigo']."'>Eliminar</a></td></tr>";
         
             
          }

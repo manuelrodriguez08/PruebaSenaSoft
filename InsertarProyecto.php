@@ -15,7 +15,7 @@ $jef = $_POST['jefe'];
 
 mysql_select_db("ejercicio",$conexion);
 
-$sql = "INSERT INTO proyectos VALUES('$titu','$des','$obj','$fec','$dur','$jef')";
+$sql = "INSERT INTO proyectos(titulo,descripcion,objetivo,fechaInicio,telefono,jefeProyecto) VALUES('$titu','$des','$obj','$fec','$dur','$jef')";
 
 if(mysql_query($sql)){
     echo "Se cargaron los datos a la tabla";

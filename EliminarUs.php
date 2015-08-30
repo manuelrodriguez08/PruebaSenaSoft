@@ -3,7 +3,7 @@ $conexion = mysql_connect("localhost","rodriguez","rodriguez");
 
 mysql_select_db("ejercicio",$conexion);
 
-
+$user = $_GET['usuarioID'];
 $titu = $_GET['nombre'];
 $des= $_GET['apellido'];
 $obj = $_GET['fechaNacimiento'];
@@ -12,7 +12,7 @@ $dur = $_GET['direccion'];
 $tel = $_GET['telefono'];
 $jef = $_GET['tipoUsuario'];
 
-if($mostrar = mysql_query( "DELETE FROM usuarios WHERE nombre='$titu' AND apellido='$des' AND fechaNacimiento='$obj' AND email='$fec' AND direccion='$dur' AND telefono='$tel'  AND tipoUsuario='$jef'")){
+if($mostrar = mysql_query( "DELETE FROM usuarios WHERE usuarioID='$user' ")){
     
     echo "Si Borro";
     

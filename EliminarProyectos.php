@@ -25,7 +25,7 @@ echo " <center> <h1> PROYECTOS </h1> </center>";
          while($fila = mysql_fetch_array($mostrar)){
               echo "<tr><td>". $fila['titulo']. "</td><td>".$fila['descripcion']."</td><td>".$fila['objetivo']."</td><td>".
                     $fila['fechainicio']."</td><td>".$fila['duracion']."</td><td>".$fila['jefeProyecto']
-                    ."</td><td><a href='EliminarPro.php?titulo=".$fila['titulo']."&descripcion=".$fila['descripcion']."&objetivo=".$fila['objetivo'].""
+                    ."</td><td><a href='EliminarPro.php?proyectoID=".$fila['proyectoID']."&titulo=".$fila['titulo']."&descripcion=".$fila['descripcion']."&objetivo=".$fila['objetivo'].""
                       . "&fechainicio=".$fila['fechainicio']."&duracion=".$fila['duracion']."&jefeproyecto=".$fila['jefeProyecto']."'>Eliminar</a></td></tr>";
         
             

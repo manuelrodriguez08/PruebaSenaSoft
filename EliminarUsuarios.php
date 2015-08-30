@@ -26,7 +26,7 @@ echo " <center> <h1> USUARIOS</h1> </center>";
          while($fila = mysql_fetch_array($mostrar)){
               echo "<tr><td>". $fila['nombre']. "</td><td>".$fila['apellido']."</td><td>".$fila['fechaNacimiento']."</td><td>".
                     $fila['email']."</td><td>".$fila['direccion']."</td><td>".$fila['telefono']."</td><td>".$fila['tipoUsuario']
-                    ."</td><td><a href='EliminarUs.php?nombre=".$fila['nombre']."&apellido=".$fila['apellido']."&fechaNacimiento=".$fila['fechaNacimiento'].""
+                    ."</td><td><a href='EliminarUs.php?usuarioID=".$fila['usuarioID']."&nombre=".$fila['nombre']."&apellido=".$fila['apellido']."&fechaNacimiento=".$fila['fechaNacimiento'].""
                       . "&email=".$fila['email']."&direccion=".$fila['direccion']."&telefono=".$fila['telefono']."&tipoUsuario=".$fila['tipoUsuario']."'>Eliminar</a></td></tr>";
         
             

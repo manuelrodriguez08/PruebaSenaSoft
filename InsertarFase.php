@@ -11,7 +11,7 @@ $cog = $_POST['codigo'];
 
 mysql_select_db("ejercicio",$conexion);
 
-$sql = "INSERT INTO fases VALUES('$nom','$cog')";
+$sql = "INSERT INTO fases(nombre,codigo) VALUES('$nom','$cog')";
 
 if(mysql_query($sql)){
     echo "Se cargaron los datos a la tabla";

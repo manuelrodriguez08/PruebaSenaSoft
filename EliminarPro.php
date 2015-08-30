@@ -4,7 +4,7 @@ $conexion = mysql_connect("localhost","rodriguez","rodriguez");
 
 mysql_select_db("ejercicio",$conexion);
 
-
+$del = $_GET['proyectoID']; 
 $titu = $_GET['titulo'];
 $des= $_GET['descripcion'];
 $obj = $_GET['objetivo'];
@@ -13,7 +13,7 @@ $dur = $_GET['duracion'];
 $tel = $_GET['jefeproyecto'];
 
 
-if($mostrar = mysql_query( "DELETE FROM proyectos WHERE titulo='$titu' AND descripcion='$des' AND objetivo='$obj' AND fechainicio='$fec' AND duracion='$dur' AND jefeproyecto='$tel'")){
+if($mostrar = mysql_query( "DELETE FROM proyectos WHERE proyectoID='$del'")){
     
     echo "Si Borro";
     
