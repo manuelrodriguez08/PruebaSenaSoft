@@ -19,8 +19,9 @@ session_start();
              
              $usuariobasedatos= $fila['usuario'];
             $contrasenabasedatos = $fila['contrasena'];
+            $tipo = $fila['tipoUsuario'];
             
-            if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos){
+            if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos && $tipo  == 'ADMINISTRADOR'){
                 
                 $_SESSION['usuario']= $usuario;
                 $_SESSION['contrasena']= $contrasena;
@@ -30,9 +31,64 @@ session_start();
                 <head>
                 <meta http-equiv='REFRESH' content='0;url=MostrarTodo.php'> </head>
         </html>";
+            }
+                
+                if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos && $tipo  == 'jefe'){
+                
+                $_SESSION['usuario']= $usuario;
+                $_SESSION['contrasena']= $contrasena;
+                
+                echo "<html> 
+            
+                <head>
+                <meta http-equiv='REFRESH' content='0;url=Iniciojefe.php'> </head>
+        </html>";
                 
                 
-            }else{
+            }
+            if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos && $tipo  == 'analista'){
+                
+                $_SESSION['usuario']= $usuario;
+                $_SESSION['contrasena']= $contrasena;
+                
+                echo "<html> 
+            
+                <head>
+                <meta http-equiv='REFRESH' content='0;url=Principal.php'> </head>
+        </html>";
+                
+                
+            }
+            
+            if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos && $tipo  == 'desarrolador'){
+                
+                $_SESSION['usuario']= $usuario;
+                $_SESSION['contrasena']= $contrasena;
+                
+                echo "<html> 
+            
+                <head>
+                <meta http-equiv='REFRESH' content='0;url=Principal.php'> </head>
+        </html>";
+                
+                
+            }
+            
+            if($usuario == $usuariobasedatos && $contrasena == $contrasenabasedatos && $tipo  == 'tester'){
+                
+                $_SESSION['usuario']= $usuario;
+                $_SESSION['contrasena']= $contrasena;
+                
+                echo "<html> 
+            
+                <head>
+                <meta http-equiv='REFRESH' content='0;url=Principal.php'> </head>
+        </html>";
+                
+                
+            }
+            else{
+                echo "No pude entrar";
                 
             }
          }

@@ -6,6 +6,8 @@ mysql_select_db("ejercicio",$conexion);
 
 
 $mostrar = mysql_query( "SELECT * FROM usuarios");
+echo " <h1> ADMINISTRADOR</h1> ";
+
 
 echo " <center> <h1> USUARIOS</h1> </center>"; 
             
@@ -65,7 +67,7 @@ echo " <center> <h1> USUARIOS</h1> </center>";
          
          while($fila = mysql_fetch_array($mostrar)){
               echo "<tr><td>". $fila['titulo']. "</td><td>".$fila['descripcion']."</td><td>". $fila['objetivo']."</td><td>".
-                    $fila['fechainicio']."</td><td>".$fila['duracion']."</td><td>".$fila['jefeProyecto'];
+                    $fila['fechaInicio']."</td><td>".$fila['duracion']."</td><td>".$fila['jefeProyecto'];
         
             
          }

@@ -21,9 +21,9 @@
                                         <td> <input type='text' name='titulo'></td>
                                         <td> <input type='text' name='descripcion'></td>
                                         <td> <input type='text' name='objetivo'></td>
-                                        <td> <input type='text' name='fecha'></td>
+                                        <td> <input type='date' name='fecha'></td>
                                          <td> <input type='text' name='duracion'></td>
-                                         <td> <input type='text' name='jefe'></td>
+                                         <td> <a href='Jefes.php'>ASIGNAR JEFE</a></td>
                                         <td> <input type='submit' ></td> 
                              
                 </tr></form>";
